@@ -19,8 +19,8 @@ int main() {
 void interval_calculator(){
 	float input_a;
 	float input_b;
-	float immediate_a = 0;
-	float immediate_b = -1;
+	float immediate_a = -1;
+	float immediate_b = -2;
 	float stored_a = 0;
 	float stored_b = -1;
 	std::string command;
@@ -38,31 +38,31 @@ void interval_calculator(){
 						immediate_a = input_a;
 						immediate_b = input_b;
 					}
-				if(immediate_a!= 0 && immediate_b != -1){
+				if(immediate_a!= -1 && immediate_b != -2){
 						std::cout<<"["<<immediate_a<<","<<immediate_b<<"]"<<std::endl;
 					}else{
 						std::cout<<"--"<<std::endl;
 					}
 			}else if(command == "negate"){
-				if(immediate_a!= 0 && immediate_b != -1){
+				if(immediate_a!= -1 && immediate_b != -2){
 					std::cout<<"["<<-immediate_b<<","<<-immediate_a<<"]"<<std::endl;
 				}else{
 					std::cout<<"--"<<std::endl;
 				}
 			}else if(command == "invert"){
-					if(immediate_a * immediate_b < 0){
+					if(immediate_a * immediate_b <= 0){
 					    std::cout<<"Error: division by zero "<<std::endl;
-						immediate_a = 0;
-						immediate_b =-1;
+						immediate_a = -1;
+						immediate_b = -2;
 			           }
-					if(immediate_a!= 0 && immediate_b != -1){
+					if(immediate_a!= -1 && immediate_b != -2){
 						std::cout<<"["<<1/immediate_b<<","<<1/immediate_a<<"]"<<std::endl;
 									}else{
 										std::cout<<"--"<<std::endl;
 									}
 				}
-			}
 		}
+}
 
 
 
